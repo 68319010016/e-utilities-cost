@@ -9,7 +9,8 @@ const routes = [
     component: AppLayout,
     meta: { requiresAuth: true },
     children: [
-      { path: '', name: 'Dashboard', component: () => import('../views/DashboardView.vue') },
+        { path: '', name: 'Dashboard', component: () => import('../views/DashboardView.vue') },
+        { path: 'settings/categories', name: 'CategoryManage', component: () => import('../views/CategoryManageView.vue') },
     ],
   },
 ];
