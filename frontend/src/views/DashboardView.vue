@@ -5,6 +5,7 @@ import MonthlyBarChart from '../components/charts/MonthlyBarChart.vue';
 import CategoryPieChart from '../components/charts/CategoryPieChart.vue';
 
 const year = ref(new Date().getFullYear());
+const yearOptions = Array.from({ length: 5 }, (_, i) => new Date().getFullYear() - i);
 const summary = ref(null);
 const categories = ref([]);
 const loading = ref(true);
@@ -36,7 +37,7 @@ onMounted(fetchDashboard);
       <h1 class="text-2xl font-bold">Dashboard</h1>
       <select v-model="year" @change="fetchDashboard"
         class="bg-gray-800 text-white px-3 py-2 rounded">
-        <option v-for="y in [year, year - 1, year - 2]" :key="y" :value="y">{{ y }}</option>
+        <option v-for="y in yearOptions" :key="y" :value="y">{{ y }}</option>
       </select>
     </div>
 
