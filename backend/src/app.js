@@ -3,8 +3,9 @@ const cors = require('cors');
 const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
 
-const authRoutes = require('./routes/auth.routes');
-const categoryRoutes = require('./routes/category.routes');
+const authRoutes = require('./routes/auth.routes')
+const categoryRoutes = require('./routes/category.routes')
+const expenseRoutes = require('./routes/expense.routes')
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(cookieParser());
 
 app.use('/api/auth', authRoutes);
 app.use('/api', categoryRoutes);
+app.use('/api/expenses', expenseRoutes);
 
 app.get('/', (req, res) => res.json({ message: 'e-utilities-cost API ทำงานปกติ' }));
 
