@@ -10,6 +10,7 @@ const routes = [
     meta: { requiresAuth: true },
     children: [
         { path: '', name: 'Dashboard', component: () => import('../views/DashboardView.vue') },
+        { path: 'expenses', name: 'ExpenseList', component: () => import('../views/ExpenseListView.vue') },
         { path: 'settings/categories', name: 'CategoryManage', component: () => import('../views/CategoryManageView.vue') },
     ],
   },
